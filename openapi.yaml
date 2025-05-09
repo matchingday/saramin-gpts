@@ -1,0 +1,61 @@
+openapi: 3.0.1
+info:
+  title: Saramin Job Search API
+  version: 1.0.0
+servers:
+  - url: https://api.saramin.co.kr
+paths:
+  /job-search:
+    get:
+      summary: 개발자 채용 공고 검색
+      parameters:
+        - name: access-key
+          in: query
+          required: true
+          schema:
+            type: string
+            description: 사람인 API 키 (`SARAMIN_ACCESS_KEY`)
+        - name: keywords
+          in: query
+          required: true
+          schema:
+            type: string
+            description: 검색할 키워드(예: 개발자)
+        - name: count
+          in: query
+          required: false
+          schema:
+            type: integer
+            default: 10
+            description: 조회할 공고 개수
+      responses:
+        '200':
+          description: 검색 결과
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  jobs:
+                    type: object
+                    properties:
+                      job:
+                        type: array
+                        items:
+                          $ref: '#/components/schemas/Job'
+components:
+  schemas:
+    Job:
+      type: object
+      properties:
+        position:
+          type: object
+          properties:
+            title: { type: string }
+        company:
+          type: object
+          properties:
+            name: { type: string }
+        location: { type: string }
+        career: { type: string }
+        updated_at: { type: string }

@@ -1,0 +1,22 @@
+{
+  "schema_version": "v1",
+  "name_for_human": "사람인 채용 검색",
+  "name_for_model": "saramin_api",
+  "description_for_human": "Saramin에서 개발자 채용 공고를 검색합니다.",
+  "description_for_model": "Use this API to fetch job announcements from Saramin by keyword.",
+  "auth": {
+    "type": "service_http",
+    "authorization_type": "header",
+    "verification_tokens": {
+      "openai": "YOUR_OPENAI_VERIFICATION_TOKEN"
+    }
+  },
+  "api": {
+    "type": "openapi",
+    "url": "https://raw.githubusercontent.com/사용자이름/saramin-gpts/main/openapi.yaml",
+    "is_user_authenticated": false
+  },
+  "logo_url": "https://your-domain.com/logo.png",
+  "contact_email": "you@your-domain.com",
+  "legal_info_url": "https://your-domain.com/legal"
+}
