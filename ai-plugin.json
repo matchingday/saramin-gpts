@@ -13,7 +13,7 @@
   },
   "api": {
     "type": "openapi",
-    "url": "https://raw.githubusercontent.com/사용자이름/saramin-gpts/main/openapi.yaml",
+    "url": "https://raw.githubusercontent.com/matchingday/saramin-gpts/refs/heads/main/openapi.yaml",
     "is_user_authenticated": false
   },
   "logo_url": "https://your-domain.com/logo.png",
